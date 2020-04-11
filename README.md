@@ -1,4 +1,8 @@
+# 36 Questions
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This project is inspired by Jubilee and NY Times Tea Time for Two and 36 Questions respectively. It is a casual game meant to be played between people trying to get to know each other.
 
 ## Available Scripts
 
