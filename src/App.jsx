@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './App.css';
-import ThinkingCards from './ThinkingCards';
-import CasualCards from './CasualCards';
-import DeepCards from './DeepCards';
-import QuestionLimitDropdown from './QuestionLimitDropdown';
+import ThinkingCards from './cards/ThinkingCards';
+import CasualCards from './cards/CasualCards';
+import DeepCards from './cards/DeepCards';
+import QuestionLimitDropdown from './utils/QuestionLimitDropdown';
 
 const App = () => {
   const [questionLimits, setQuestionLimits] = useState({

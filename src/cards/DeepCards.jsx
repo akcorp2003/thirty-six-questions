@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import PictureCard from './PictureCard';
 import QuestionCard from './QuestionCard';
 
-import { casualQuestions } from './utils/questions';
-import useQuestions from './hooks/useQuestions';
+import useQuestions from '../hooks/useQuestions';
+import { deepQuestions } from '../utils/questions';
 
-const CasualCards = ({ maxQuestions }) => {
+const DeepCards = ({ maxQuestions }) => {
   const {
     beginQuestion,
     endQuestion,
@@ -15,7 +15,7 @@ const CasualCards = ({ maxQuestions }) => {
       showQuestionCard,
       limitReached,
     },
-  } = useQuestions(casualQuestions, maxQuestions);
+  } = useQuestions(deepQuestions, maxQuestions);
 
   if (limitReached) {
     return (
@@ -37,18 +37,18 @@ const CasualCards = ({ maxQuestions }) => {
 
   return (
     <PictureCard
-      src="https://dp6mhagng1yw3.cloudfront.net/entries/11th/6a4dd7ae-878f-4872-a8ba-6b7ac9f96565.png"
+      src="http://icons.iconarchive.com/icons/rokey/smooth/128/shovel-icon.png"
       onClick={beginQuestion}
     />
   );
 };
 
-CasualCards.propTypes = {
+DeepCards.propTypes = {
   maxQuestions: PropTypes.number,
 };
 
-CasualCards.defaultProps = {
+DeepCards.defaultProps = {
   maxQuestions: 3,
 };
 
-export default CasualCards;
+export default DeepCards;

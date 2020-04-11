@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import PictureCard from './PictureCard';
 import QuestionCard from './QuestionCard';
 
-import useQuestions from './hooks/useQuestions';
-import { thinkingQuestions } from './utils/questions';
+import useQuestions from '../hooks/useQuestions';
+import { thinkingQuestions } from '../utils/questions';
 
 const ThinkingCards = ({ maxQuestions }) => {
   const {
