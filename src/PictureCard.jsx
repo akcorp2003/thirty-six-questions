@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 
 const PictureCard = ({ src, onClick }) => (
-  <Card onClick={onClick}>
+  <Card border="dark" onClick={onClick}>
     <Card.Img src={src} />
   </Card>
 );

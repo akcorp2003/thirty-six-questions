@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 
 const QuestionCard = ({ message, onClick }) => (
-  <Card onClick={onClick}>
-    <Card.Body>{message}</Card.Body>
+  <Card border="dark" onClick={onClick}>
+    <Card.Body>
+      <Card.Title>{message}</Card.Title>
+    </Card.Body>
   </Card>
 );
 
