@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PictureCard from './PictureCard';
 import QuestionCard from './QuestionCard';
 
 import useQuestions from './hooks/useQuestions';
 import { thinkingQuestions } from './utils/questions';
 
-const ThinkingCards = () => {
+const ThinkingCards = ({ maxQuestions }) => {
   const {
     beginQuestion,
     endQuestion,
@@ -14,7 +15,7 @@ const ThinkingCards = () => {
       limitReached,
       showQuestionCard,
     },
-  } = useQuestions(thinkingQuestions, 3);
+  } = useQuestions(thinkingQuestions, maxQuestions);
 
   if (limitReached) {
     return (
@@ -40,6 +41,14 @@ const ThinkingCards = () => {
       onClick={beginQuestion}
     />
   );
+};
+
+ThinkingCards.propTypes = {
+  maxQuestions: PropTypes.number,
+};
+
+ThinkingCards.defaultProps = {
+  maxQuestions: 3,
 };
 
 export default ThinkingCards;

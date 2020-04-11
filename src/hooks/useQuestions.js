@@ -1,19 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const MAX_LIMIT = 3;
-const usedQuestions = new Set();
 
 export const useQuestions = (questions, maxLimit = MAX_LIMIT) => {
-  console.log(usedQuestions);
-  const [showQuestionCard, toggle] = useState(false);
-  const [gameInfo, setGameInfo] = useState({
+  const defaultGameState = {
     questionsAnswered: 0,
     currentQuestion: '',
-  });
+    usedQuestions: new Set(),
+  };
+  const [showQuestionCard, toggle] = useState(false);
+  const [gameInfo, setGameInfo] = useState(defaultGameState);
+
+  useEffect(() => {
+    setGameInfo({
+      questionsAnswered: 0,
+      currentQuestion: '',
+      usedQuestions: new Set(),
+    });
+  }, [maxLimit]);
 
   const {
     questionsAnswered,
     currentQuestion,
+    usedQuestions,
   } = gameInfo;
 
   const endQuestion = () => {
@@ -26,6 +35,7 @@ export const useQuestions = (questions, maxLimit = MAX_LIMIT) => {
 
   const beginQuestion = () => {
     let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    console.log(usedQuestions);
     while (usedQuestions.has(randomQuestion)) {
       randomQuestion = questions[Math.floor(Math.random() * questions.length)];
     };

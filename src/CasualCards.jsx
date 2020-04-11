@@ -1,12 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PictureCard from './PictureCard';
 import QuestionCard from './QuestionCard';
 
 import { casualQuestions } from './utils/questions';
 import useQuestions from './hooks/useQuestions';
 
-const CasualCards = () => {
-  
+const CasualCards = ({ maxQuestions }) => {
   const {
     beginQuestion,
     endQuestion,
@@ -15,7 +15,7 @@ const CasualCards = () => {
       showQuestionCard,
       limitReached,
     },
-  } = useQuestions(casualQuestions);
+  } = useQuestions(casualQuestions, maxQuestions);
 
   if (limitReached) {
     return (
@@ -41,6 +41,14 @@ const CasualCards = () => {
       onClick={beginQuestion}
     />
   );
+};
+
+CasualCards.propTypes = {
+  maxQuestions: PropTypes.number,
+};
+
+CasualCards.defaultProps = {
+  maxQuestions: 3,
 };
 
 export default CasualCards;
