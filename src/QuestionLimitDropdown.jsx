@@ -7,7 +7,7 @@ const QuestionLimitDropdown = ({ onItemClick, numQuestions }) => (
   <DropdownButton
     title={`Number of Questions: ${numQuestions}`}
     className="pb-3"
-    onSelect={key => onItemClick(key)}
+    onSelect={key => onItemClick(Number(key))}
   >
     {[...Array(12)].map((c, index) => (
       <Dropdown.Item eventKey={index + 1}>{index + 1}</Dropdown.Item>

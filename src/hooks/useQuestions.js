@@ -17,6 +17,7 @@ export const useQuestions = (questions, maxLimit = MAX_LIMIT) => {
       currentQuestion: '',
       usedQuestions: new Set(),
     });
+    toggle(false);
   }, [maxLimit]);
 
   const {
