@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 
 const QuestionCard = ({ message, onClick }) => (
-  <Card border="dark" onClick={onClick}>
+  <Card border="dark" onClick={onClick} className="animated fadeIn">
     <Card.Body>
       <Card.Title>{message}</Card.Title>
     </Card.Body>
